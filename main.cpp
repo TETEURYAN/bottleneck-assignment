@@ -1,11 +1,13 @@
 #include "src/bap.hpp"
 #include <iostream>
 #include <vector>
+#include <chrono>
 
 using namespace std;
 using namespace bap;
 
 int main() {
+    auto start = chrono::high_resolution_clock::now();
     int n;
     cin >> n;
 
@@ -34,6 +36,12 @@ int main() {
     if (assignment[i] == j)
     cout << "λ[" << i << "][" << j << "] = " << lambda[i][j] << endl;
     cout << "========================================================" << endl;
+
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> duration = end - start;
+
+    cout << "\nTEMPO DE EXECUÇÃO: " << duration.count() << " segundos\n";
+    cout << "========================================================\n";
 
     return 0;
 }
