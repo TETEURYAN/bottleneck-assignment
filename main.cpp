@@ -96,7 +96,33 @@ int main(int argc, char *argv[]) {
         cout << "\n========================================================" << endl;
         cout << "TEMPO DE EXECUÇÃO DO ILS: " << duration.count() << " segundos" << endl;
         cout << "========================================================\n\n";
-    }
+    } else if (mode == 3) {
+        // ============================== MODO VND PURO ==============================
+        auto start = chrono::high_resolution_clock::now();
+
+        cout << "========================================================" << endl;
+        cout << "EXECUTANDO VND COM BASE NA SOLUÇÃO ÓTIMA" << endl;
+        cout << "========================================================\n\n";
+
+        auto lambda = vnd_heuristica(custo, assignment, optimalCost);
+
+        cout << "CUSTO BASE (gargalo): " << optimalCost << endl;
+
+        cout << "\n========================================================" << endl;
+        cout << "MARGENS DE SEGURANÇA λ₍ᵢⱼ₎ (VND):" << endl;
+        cout << "========================================================" << endl;
+
+        for (int i = 0; i < (int)lambda.size(); ++i)
+            for (int j = 0; j < (int)lambda[i].size(); ++j)
+                if (assignment[i] == j)
+                    cout << "λ[" << i << "][" << j << "] = " << lambda[i][j] << endl;
+
+        auto end = chrono::high_resolution_clock::now();
+        chrono::duration<double> duration = end - start;
+
+        cout << "\n========================================================" << endl;
+        cout << "TEMPO DE EXECUÇÃO DO VND: " << duration.count() << " segundos" << endl;
+        cout << "========================================================\n\n";
 
     return 0;
 }
