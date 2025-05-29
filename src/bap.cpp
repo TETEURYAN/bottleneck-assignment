@@ -17,7 +17,7 @@ namespace bap {
         }
     }
 
-    bool isFeasible(const CostMatrix& cost, int threshold, std::vector<int>& match) {
+    bool isFeasible(const CostMatrix& cost, int threshold, vector<int>& match) {
         int n = (int)cost.size();
         vector<vector<int>> adj(n);
         for (int i = 0; i < n; ++i)
@@ -100,6 +100,16 @@ namespace bap {
 
         return lambda;
     }
+
+    vector<int> solve_ils(const CostMatrix& cost, int maxIter, int& gargalo, vector<vector<int>>& lambda) {
+        vector<int> assignment;
+        int initialGargalo = solveBAP(cost, assignment);
+        auto lambdaInit = ils::vnd_heuristica(cost, assignment, initialGargalo);
+
+        ils::ILSSolver solver;
+        return solver.solve_ils(cost, maxIter, initialGargalo, assignment, lambdaInit, gargalo, lambda);
+    }
+
 
 } // namespace bap
 

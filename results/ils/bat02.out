@@ -1,0 +1,213 @@
+========================================================
+CUSTO ÓTIMO COM ILS (gargalo): 50
+========================================================
+
+Tarefa 0 → Agente 35
+Tarefa 1 → Agente 72
+Tarefa 2 → Agente 56
+Tarefa 3 → Agente 87
+Tarefa 4 → Agente 14
+Tarefa 5 → Agente 13
+Tarefa 6 → Agente 17
+Tarefa 7 → Agente 60
+Tarefa 8 → Agente 31
+Tarefa 9 → Agente 69
+Tarefa 10 → Agente 23
+Tarefa 11 → Agente 73
+Tarefa 12 → Agente 55
+Tarefa 13 → Agente 10
+Tarefa 14 → Agente 99
+Tarefa 15 → Agente 79
+Tarefa 16 → Agente 84
+Tarefa 17 → Agente 38
+Tarefa 18 → Agente 36
+Tarefa 19 → Agente 48
+Tarefa 20 → Agente 6
+Tarefa 21 → Agente 54
+Tarefa 22 → Agente 5
+Tarefa 23 → Agente 4
+Tarefa 24 → Agente 40
+Tarefa 25 → Agente 11
+Tarefa 26 → Agente 70
+Tarefa 27 → Agente 9
+Tarefa 28 → Agente 77
+Tarefa 29 → Agente 93
+Tarefa 30 → Agente 80
+Tarefa 31 → Agente 25
+Tarefa 32 → Agente 39
+Tarefa 33 → Agente 7
+Tarefa 34 → Agente 57
+Tarefa 35 → Agente 64
+Tarefa 36 → Agente 45
+Tarefa 37 → Agente 34
+Tarefa 38 → Agente 89
+Tarefa 39 → Agente 22
+Tarefa 40 → Agente 42
+Tarefa 41 → Agente 15
+Tarefa 42 → Agente 98
+Tarefa 43 → Agente 1
+Tarefa 44 → Agente 88
+Tarefa 45 → Agente 44
+Tarefa 46 → Agente 75
+Tarefa 47 → Agente 20
+Tarefa 48 → Agente 58
+Tarefa 49 → Agente 24
+Tarefa 50 → Agente 3
+Tarefa 51 → Agente 51
+Tarefa 52 → Agente 95
+Tarefa 53 → Agente 21
+Tarefa 54 → Agente 81
+Tarefa 55 → Agente 65
+Tarefa 56 → Agente 52
+Tarefa 57 → Agente 83
+Tarefa 58 → Agente 33
+Tarefa 59 → Agente 96
+Tarefa 60 → Agente 32
+Tarefa 61 → Agente 49
+Tarefa 62 → Agente 97
+Tarefa 63 → Agente 94
+Tarefa 64 → Agente 29
+Tarefa 65 → Agente 74
+Tarefa 66 → Agente 66
+Tarefa 67 → Agente 53
+Tarefa 68 → Agente 86
+Tarefa 69 → Agente 41
+Tarefa 70 → Agente 18
+Tarefa 71 → Agente 92
+Tarefa 72 → Agente 90
+Tarefa 73 → Agente 50
+Tarefa 74 → Agente 47
+Tarefa 75 → Agente 82
+Tarefa 76 → Agente 71
+Tarefa 77 → Agente 61
+Tarefa 78 → Agente 8
+Tarefa 79 → Agente 67
+Tarefa 80 → Agente 85
+Tarefa 81 → Agente 62
+Tarefa 82 → Agente 43
+Tarefa 83 → Agente 0
+Tarefa 84 → Agente 63
+Tarefa 85 → Agente 76
+Tarefa 86 → Agente 26
+Tarefa 87 → Agente 27
+Tarefa 88 → Agente 16
+Tarefa 89 → Agente 28
+Tarefa 90 → Agente 37
+Tarefa 91 → Agente 78
+Tarefa 92 → Agente 30
+Tarefa 93 → Agente 46
+Tarefa 94 → Agente 2
+Tarefa 95 → Agente 12
+Tarefa 96 → Agente 59
+Tarefa 97 → Agente 68
+Tarefa 98 → Agente 91
+Tarefa 99 → Agente 19
+
+========================================================
+MARGENS DE SEGURANÇA λ₍ᵢⱼ₎:
+========================================================
+λ[0][35] = 0
+λ[1][72] = 0
+λ[2][56] = 0
+λ[3][87] = 0
+λ[4][14] = 0
+λ[5][13] = 0
+λ[6][17] = 0
+λ[7][60] = 0
+λ[8][31] = 0
+λ[9][69] = 0
+λ[10][23] = 0
+λ[11][73] = 0
+λ[12][55] = 0
+λ[13][10] = 0
+λ[14][99] = 0
+λ[15][79] = 0
+λ[16][84] = 0
+λ[17][38] = 0
+λ[18][36] = 0
+λ[19][48] = 0
+λ[20][6] = 0
+λ[21][54] = 0
+λ[22][5] = 0
+λ[23][4] = 0
+λ[24][40] = 0
+λ[25][11] = 0
+λ[26][70] = 0
+λ[27][9] = 0
+λ[28][77] = 0
+λ[29][93] = 0
+λ[30][80] = 0
+λ[31][25] = 0
+λ[32][39] = 0
+λ[33][7] = 0
+λ[34][57] = 0
+λ[35][64] = 0
+λ[36][45] = 0
+λ[37][34] = 0
+λ[38][89] = 0
+λ[39][22] = 0
+λ[40][42] = 0
+λ[41][15] = 0
+λ[42][98] = 0
+λ[43][1] = 0
+λ[44][88] = 0
+λ[45][44] = 0
+λ[46][75] = 0
+λ[47][20] = 0
+λ[48][58] = 0
+λ[49][24] = 0
+λ[50][3] = 0
+λ[51][51] = 0
+λ[52][95] = 0
+λ[53][21] = 0
+λ[54][81] = 0
+λ[55][65] = 0
+λ[56][52] = 0
+λ[57][83] = 0
+λ[58][33] = 0
+λ[59][96] = 0
+λ[60][32] = 0
+λ[61][49] = 0
+λ[62][97] = 0
+λ[63][94] = 0
+λ[64][29] = 0
+λ[65][74] = 0
+λ[66][66] = 0
+λ[67][53] = 0
+λ[68][86] = 0
+λ[69][41] = 0
+λ[70][18] = 0
+λ[71][92] = 0
+λ[72][90] = 0
+λ[73][50] = 0
+λ[74][47] = 0
+λ[75][82] = 0
+λ[76][71] = 0
+λ[77][61] = 0
+λ[78][8] = 0
+λ[79][67] = 0
+λ[80][85] = 0
+λ[81][62] = 0
+λ[82][43] = 0
+λ[83][0] = 0
+λ[84][63] = 0
+λ[85][76] = 0
+λ[86][26] = 0
+λ[87][27] = 0
+λ[88][16] = 0
+λ[89][28] = 0
+λ[90][37] = 0
+λ[91][78] = 0
+λ[92][30] = 0
+λ[93][46] = 0
+λ[94][2] = 0
+λ[95][12] = 0
+λ[96][59] = 0
+λ[97][68] = 0
+λ[98][91] = 0
+λ[99][19] = 0
+
+========================================================
+TEMPO DE EXECUÇÃO DO ILS: 0.163886 segundos
+========================================================
+

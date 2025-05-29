@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include "meta-heuristic/ils.hpp"
 
 namespace bap {
 
@@ -16,6 +17,8 @@ namespace bap {
 
     // Imprime a matriz
     void printMatrix(const CostMatrix& matrix);
+
+    std::vector<int> solve_ils(const CostMatrix& cost, int maxIter, int& gargalo, std::vector<std::vector<int>>& lambda);
 
 } // namespace bap
 
