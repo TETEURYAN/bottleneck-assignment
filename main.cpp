@@ -123,6 +123,7 @@ int main(int argc, char *argv[]) {
         cout << "\n========================================================" << endl;
         cout << "TEMPO DE EXECUÇÃO DO VND: " << duration.count() << " segundos" << endl;
         cout << "========================================================\n\n";
+    }
 
     return 0;
 }
