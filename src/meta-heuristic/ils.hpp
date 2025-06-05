@@ -28,6 +28,10 @@ namespace ils {
         int originalGargalo
     );
 
+    int evaluateGargalo(const CostMatrix& cost, const std::vector<int>& assignment);
+
+    std::vector<int> solveGreedy(const CostMatrix& cost);
+
 } // namespace ils
 
 #endif

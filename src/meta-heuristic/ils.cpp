@@ -2,6 +2,7 @@
 #include <random>
 #include <chrono>
 #include <algorithm>
+#include <climits>
 
 #include "../bap.hpp"
 
@@ -15,6 +16,29 @@ int evaluateGargalo(const CostMatrix& cost, const std::vector<int>& assignment) 
     for (int i = 0; i < (int)cost.size(); ++i)
         g = std::max(g, cost[i][assignment[i]]);
     return g;
+}
+
+std:: vector<int> solveGreedy (const CostMatrix& cost) {
+    int n = cost.size();
+    std::vector<int> assignment(n);
+    std::vector<bool> used(n, false);
+
+    for (int i = 0; i < n; ++i) {
+        int minCost = INT_MAX;
+        int bestJ = -1;
+
+        for (int j = 0; j < n; ++j) {
+            if (!used[j] && cost[i][j] < minCost) {
+                minCost = cost[i][j];
+                bestJ = j;
+            }
+        }
+
+        assignment[i] = bestJ;
+        used[bestJ] = true;
+    }
+
+    return assignment;
 }
 
 std::vector<std::vector<int>> vnd_heuristica(

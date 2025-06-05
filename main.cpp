@@ -8,22 +8,23 @@
 using namespace std;
 using namespace bap;
 using namespace ils;
+using namespace std;
 
 int main(int argc, char *argv[]) {
 
     if (argc < 2) {
         cerr << "Uso: " << argv[0] << " <opção>\n"
-             << "Onde <opção> é:\n"
-             << "1 - para executar BAP\n"
-             << "2 - para executar ILS\n";
+        << "Onde <opção> é:\n"
+        << "1 - para executar BAP\n"
+        << "2 - para executar ILS\n";
         return 1;
     }
-
+    
     int mode = atoi(argv[1]); 
     
     int n;
     cin >> n;
-
+    
     
     CostMatrix custo(n, vector<int>(n));
     for (int i = 0; i < n; ++i)
@@ -31,12 +32,16 @@ int main(int argc, char *argv[]) {
     cin >> custo[i][j];
     
     vector<int> assignment;
+    
     int optimalCost = solveBAP(custo, assignment);
+
+    vector<int> initialAssignment = solveGreedy(custo);
+    int initialGargalo = evaluateGargalo(custo, initialAssignment);
 
     if (mode == 1) {
         auto start = chrono::high_resolution_clock::now();
 
-        cout << "========================================================" << endl;
+        std::cout << "========================================================" << std::endl;
         cout << "CUSTO ÓTIMO (gargalo): " << optimalCost << endl;
         cout << "========================================================\n\n";
 
@@ -62,17 +67,17 @@ int main(int argc, char *argv[]) {
 
     } else if (mode == 2) {
         auto start = chrono::high_resolution_clock::now();
-
+        
         // Etapa 1: solução inicial exata
 
         // Etapa 2: margens de robustez estimadas com VND
-        auto lambdaInit = vnd_heuristica(custo, assignment, optimalCost);
+        auto lambdaInit = vnd_heuristica(custo, initialAssignment, initialGargalo);
 
         // Etapa 3: aplicação do ILS
         ILSSolver solver;
         int finalGargalo;
         vector<vector<int>> finalLambda;
-        vector<int> improved = solver.solve_ils(custo, 100, optimalCost, assignment, lambdaInit, finalGargalo, finalLambda);
+        vector<int> improved = solver.solve_ils(custo, 100, initialGargalo, initialAssignment, lambdaInit, finalGargalo, finalLambda);
 
         cout << "========================================================" << endl;
         cout << "CUSTO ÓTIMO COM ILS (gargalo): " << finalGargalo << endl;
@@ -100,13 +105,16 @@ int main(int argc, char *argv[]) {
         // ============================== MODO VND PURO ==============================
         auto start = chrono::high_resolution_clock::now();
 
+        vector<int> initialAssignment = solveGreedy(custo);
+        int initialGargalo = evaluateGargalo(custo, initialAssignment);
+
         cout << "========================================================" << endl;
         cout << "EXECUTANDO VND COM BASE NA SOLUÇÃO ÓTIMA" << endl;
         cout << "========================================================\n\n";
 
-        auto lambda = vnd_heuristica(custo, assignment, optimalCost);
+        auto lambda = vnd_heuristica(custo, initialAssignment, initialGargalo);
 
-        cout << "CUSTO BASE (gargalo): " << optimalCost << endl;
+        cout << "CUSTO BASE (gargalo): " << initialGargalo << endl;
 
         cout << "\n========================================================" << endl;
         cout << "MARGENS DE SEGURANÇA λ₍ᵢⱼ₎ (VND):" << endl;
@@ -114,7 +122,7 @@ int main(int argc, char *argv[]) {
 
         for (int i = 0; i < (int)lambda.size(); ++i)
             for (int j = 0; j < (int)lambda[i].size(); ++j)
-                if (assignment[i] == j)
+                if (initialAssignment[i] == j)
                     cout << "λ[" << i << "][" << j << "] = " << lambda[i][j] << endl;
 
         auto end = chrono::high_resolution_clock::now();
